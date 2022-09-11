@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Face from "../components/Face.astro";
+import skate from "../images/skate.png";
+import evas from "../images/evas.png";
+import shinji from "../images/shinji.png";
+---
+
+<Layout title="mshynes">
+  <div class="flex flex-col items-center relative">
+    <img class="w-96 absolute right-0 bottom-0 -z-10" src={evas} />
+    <div class="flex flex-col md:flex-row gap-12 items-center my-12">
+      <div>
+        <h1 class="font-bold text-lg">MITCHELL</h1>
+        <h1 class="font-bold text-6xl">HYNES</h1>
+        <div class="my-2">
+          <h1 class="text-md">EPISODE 10: "STUDENT"</h1>
+          <h1 class="text-sm">MEMORIAL UNIVERSITY</h1>
+        </div>
+        <ul class="text-sm">
+          <li>
+            <a href="https://mitchellhynes.com">► HOMEPAGE</a>
+          </li>
+        </ul>
+      </div>
+      <Face />
+    </div>
+    <div class="flex text-sm flex-col items-center">
+      <span class="-rotate-12 translate-y-24">
+        "the world is full of things more powerful than us. <br />
+        But if you know how to catch a ride, you can go places" <br />
+        <span class="ml-5">- y.t.</span>
+      </span>
+      <img width="300" src={skate} />
+    </div>
+    <div class="my-20">
+      <hr class="-rotate-12 w-screen border-white" />
+      <hr class="-rotate-12 my-4 w-screen border-white" />
+    </div>
+    <div></div>
+    <h1 class="mb-20">ENTER THE MITCHIVERSE</h1>
+    <div class="mb-10 flex flex-col md:flex-row gap-24 justify-center">
+      <div>
+        <h2 class="mb-6">GOOD ADVICE</h2>
+        <div class="flex flex-col gap-12 ml-5">
+          <span>
+            &gt; Part of Growing Up Means Finding A Way To<br />Interact With
+            Others While Distancing Pain
+          </span>
+          <span>
+            &gt; “This Snow Crash thing--is it a virus, a drug,<br />or a
+            religion?” Juanita shrugs. “What's the difference?”
+          </span>
+          <span>
+            &gt; “When the past is always with you, it may as<br />well be
+            present; and if it is present, it will be<br />future as well.”
+          </span>
+        </div>
+      </div>
+      <div>
+        <h2 class="mb-6">HYPERLINKS</h2>
+        <div class="flex flex-col">
+          <ul class="flex flex-col gap-4">
+            <li><a href="https://www.cs.mun.ca/~k47swp">~k47swp</a></li>
+            <li><a href="https://www.cs.mun.ca/~raflynn">~raflynn</a></li>
+            <li><a href="https://www.cs.mun.ca/~jmurphy17">~jmurphy17</a></li>
+            <li><a href="https://www.cs.mun.ca/~etcrann">~etcrann</a></li>
+            <li><a href="https://www.cs.mun.ca/~gjpower">~gjpower</a></li>
+            <li><a href="https://www.cs.mun.ca/~agstacey">~agstacey</a></li>
+            <li><a href="https://www.cs.mun.ca/~nrm540">~nrm540</a></li>
+            <li><a href="https://www.cs.mun.ca/~lmurphy19">~lmurphy19</a></li>
+            <li><a href="https://www.cs.mun.ca/~kashal">~kashal</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-[150rem] bg-gradient-to-b from-black to-white">
+    <div class="text-xl text-center">nsfw btw</div>
+    <img class="mt-[150rem]" src={shinji} />
+  </div>
+</Layout>
