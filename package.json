@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^1.1.2",
     "@astrojs/tailwind": "^1.0.0",
+    "@notionhq/client": "^2.2.0",
     "@react-three/fiber": "^8.7.2",
     "@react-three/postprocessing": "^2.6.2",
     "astro": "^1.2.1",
