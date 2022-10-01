@@ -1,8 +1,6 @@
+import { NotionBlock } from "@9gustin/react-notion-render";
 import { Client } from "@notionhq/client";
-import {
-  BlockObjectResponse,
-  PageObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 const notion = new Client({
   auth: import.meta.env.NOTION_TOKEN,
@@ -15,7 +13,7 @@ export type NotionPage = {
   slugLink: string;
   createdTime: string;
   formattedCreatedTime: string;
-  blocks: unknown[];
+  blocks: NotionBlock[];
 };
 
 const monthNames = [

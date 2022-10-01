@@ -7,9 +7,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<style>
-
-</style>
+<style></style>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
@@ -32,5 +30,10 @@ const { title } = Astro.props;
     <div class="mt-4">
       <slot />
     </div>
+    <footer>
+      <a
+        class="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
+        href="./faq">FAQ</a>
+    </footer>
   </div>
 </body>

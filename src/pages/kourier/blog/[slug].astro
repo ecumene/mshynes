@@ -1,6 +1,6 @@
 ---
-import { Render } from "@9gustin/react-notion-render";
 import Enterprise from "../../../layouts/Enterprise.astro";
+import NotionPage from "../../../components/NotionPage";
 
 export async function getStaticPaths() {
   const { getPages } = await import("../../../data/notion");
@@ -30,7 +30,5 @@ const { title, subtitle, formattedCreatedTime, blocks } = (
     <i class="text-md">"{subtitle}"</i>
   </div>
   <div class="text-sm">written by: mitch</div>
-  <!-- <NotionRenderer blockMap={blocks} /> -->
-  Blocks:
-  <Render client:only="react" blocks={blocks} />
+  <NotionPage blocks={blocks} />
 </Enterprise>
