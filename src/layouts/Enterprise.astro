@@ -1,5 +1,6 @@
 ---
 import logo from "/radiks.svg";
+import Login from "../components/Login";
 export interface Props {
   title: string;
 }
@@ -13,7 +14,7 @@ const { title } = Astro.props;
 <meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
-<title>{title}</title>
+<title>{title}</title><Login client:only="react" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,7 +24,7 @@ const { title } = Astro.props;
 />
 
 <body class="font-serif">
-  <div class="m-auto w-96">
+  <div class="m-auto max-w-2xl min-w-[24rem]">
     <a href="/~mshynes/kourier/"><img class="my-2 w-24" src={logo} /></a>
     <div class="text-lg">Radi Kourier Systems.</div>
     <i>We deliver at the speed of rad!</i>
