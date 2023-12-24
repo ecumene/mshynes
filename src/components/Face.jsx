@@ -6,7 +6,7 @@ import {
   Bloom,
 } from "@react-three/postprocessing";
 import { Resizer, KernelSize, BlendFunction } from "postprocessing";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 
 function Box() {
@@ -57,6 +57,7 @@ function Box() {
 export default function Face() {
   return (
     <div class="h-60">
+      <Suspense fallback={<img className="" width="300" height="300" src="/mitch-preview.png"/>}>
       <Canvas
         orthographic
         camera={{ zoom: 10, near: -100, far: 100, position: [0, 0, 0] }}
@@ -78,6 +79,7 @@ export default function Face() {
         </EffectComposer>
         <Box></Box>
       </Canvas>
+</Suspense>
     </div>
   );
 }
