@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
 import Face from "../components/Face.astro";
 import skate from "../images/skate.png";
@@ -8,7 +10,11 @@ import shinji from "../images/shinji.png";
 
 <Layout title="mshynes">
   <div class="flex flex-col items-center relative">
-    <img class="w-96 absolute right-0 bottom-0 -z-10" src={evas} />
+    <Image
+      alt="Evangelion Evas"
+      class="w-96 absolute right-0 bottom-0 -z-10"
+      src={evas}
+    />
     <div class="flex flex-col md:flex-row gap-12 items-center my-12">
       <div>
         <h1 class="font-bold text-lg">MITCHELL</h1>
@@ -26,16 +32,16 @@ import shinji from "../images/shinji.png";
       <Face />
     </div>
     <div class="flex text-sm flex-col items-center">
-      <span class="-rotate-12 translate-y-24">
+      <span class="-rotate-12 translate-y-32">
         "the world is full of things more powerful than us. <br />
         But if you know how to catch a ride, you can go places" <br />
         <span class="ml-5">- Raven.</span>
       </span>
-      <img width="300" src={skate} />
+      <Image alt="Evangelion Evas" width="300" src={skate} />
     </div>
     <div class="my-20">
-      <hr class="-rotate-12 w-screen border-white" />
-      <hr class="-rotate-12 my-4 w-screen border-white" />
+      <hr class="-rotate-12 w-screen border-[#ebe9ff]" />
+      <hr class="-rotate-12 my-4 w-screen border-[#ebe9ff]" />
     </div>
     <div></div>
     <h1 class="mb-20">ENTER THE MITCHIVERSE</h1>
@@ -78,6 +84,6 @@ import shinji from "../images/shinji.png";
   </div>
   <div class="pt-[150rem] bg-gradient-to-b from-black to-white">
     <div class="text-xl text-center">nsfw btw</div>
-    <img class="mt-[150rem]" src={shinji} />
+    <Image alt="Femboy Shinji" class="mt-[150rem]" src={shinji} />
   </div>
 </Layout>

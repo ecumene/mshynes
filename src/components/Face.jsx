@@ -1,5 +1,5 @@
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
+import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import {
   EffectComposer,
   ChromaticAberration,
@@ -54,32 +54,47 @@ function Box() {
   );
 }
 
+const FallbackUI = () => {
+  return (
+    <div className="w-[300px] h-[300px]">
+      <img
+        className=""
+        width="300"
+        height="300"
+        src="/~mshynes/mitch-preview.png"
+      />
+    </div>
+  );
+};
+
 export default function Face() {
+  if (typeof process !== "undefined") return <FallbackUI />;
+
   return (
     <div class="h-60">
-      <Suspense fallback={<img className="" width="300" height="300" src="/mitch-preview.png"/>}>
-      <Canvas
-        orthographic
-        camera={{ zoom: 10, near: -100, far: 100, position: [0, 0, 0] }}
-      >
-        <EffectComposer>
-          <ChromaticAberration
-            blendFunction={BlendFunction.NORMAL} // blend mode
-            offset={[0.008, 0.008]} // color offset
-          />
-          <Bloom
-            intensity={1.0} // The bloom intensity.
-            blurPass={undefined} // A blur pass.
-            width={Resizer.AUTO_SIZE} // render width
-            height={Resizer.AUTO_SIZE} // render height
-            kernelSize={KernelSize.SMALL} // blur kernel size
-            luminanceThreshold={0.2} // luminance threshold. Raise this value to mask out darker elements in the scene.
-            luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-          />
-        </EffectComposer>
-        <Box></Box>
-      </Canvas>
-</Suspense>
+      <Suspense fallback={<FallbackUI />}>
+        <Canvas
+          orthographic
+          camera={{ zoom: 10, near: -100, far: 100, position: [0, 0, 0] }}
+        >
+          <EffectComposer>
+            <ChromaticAberration
+              blendFunction={BlendFunction.NORMAL} // blend mode
+              offset={[0.008, 0.008]} // color offset
+            />
+            <Bloom
+              intensity={1.0} // The bloom intensity.
+              blurPass={undefined} // A blur pass.
+              width={Resizer.AUTO_SIZE} // render width
+              height={Resizer.AUTO_SIZE} // render height
+              kernelSize={KernelSize.SMALL} // blur kernel size
+              luminanceThreshold={0.2} // luminance threshold. Raise this value to mask out darker elements in the scene.
+              luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+            />
+          </EffectComposer>
+          <Box></Box>
+        </Canvas>
+      </Suspense>
     </div>
   );
 }

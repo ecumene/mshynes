@@ -6,20 +6,23 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<style>
+<style is:global>
   html {
     font-size: 20px;
-    color: #f8f0e3;
+    color: #ebe9ff;
   }
   * {
-    text-shadow: 0.05rem 0.05rem #aa0000, -0.05rem 0.05rem #00aa00,
-      -0.05rem -0.05rem #0000aa;
+    text-shadow: 0.05rem 0.05rem 1px #aa0000, -0.05rem 0.05rem 1px #00aa00,
+      -0.05rem -0.05rem 1px #0000aa;
+  }
+  p, h1, h2, h3, h4, h5, h6, li  {
+    transform: rotate(-0.5deg);
   }
 </style>
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/~mshynes/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
